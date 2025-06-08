@@ -1,0 +1,58 @@
+
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles previously in index.html */
+body {
+  font-family: 'Cairo', 'sans-serif';
+  /* background-color: #0f172a; /* slate-900 - This is handled by Tailwind class on body tag */
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 10px; /* Slightly wider for better grab */
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a; /* slate-900 (new surface color) */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0ea5e9; /* sky-500 / new primary */
+  border-radius: 10px;
+  border: 2px solid #0f172a; /* slate-900 (new surface color, creates padding effect) */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7; /* sky-600 / new primaryHover */
+}
+
+/* Ensure focus styles are visible and consistent if not handled by Tailwind's focus:ring */
+*:focus-visible {
+  outline: 2px solid #38bdf8; /* sky-400 or another accent */
+  outline-offset: 2px;
+}
+
+/* Basic animation for page transitions if React Router transitions were added later */
+.page-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 300ms, transform 300ms;
+}
